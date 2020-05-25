@@ -6,7 +6,7 @@ import AuthStack from '~/navigations/AuthStack';
 // Register NAVIGATIONS
 import RegisterStack from '~/navigations/RegisterStack';
 
-import LoadingScreen from '~/navigations/LoadingScreen';
+import LoadingScreen from '~/pages/LoadingScreen';
 import StepsPage from '~/pages/Steps';
 
 // SWITCH DE ROTAS PRIMÁRIAS

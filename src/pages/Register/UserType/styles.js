@@ -1,12 +1,12 @@
 import styled from 'styled-components/native';
-import { colors, metrics, fonts } from '~/styles';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import {colors, metrics, fonts} from '~/styles';
+import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import { Dimensions } from 'react-native';
+import {Dimensions} from 'react-native';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -33,8 +33,8 @@ export const TypeBtn = styled.TouchableWithoutFeedback`
 `;
 
 export const TypeImage = styled.Image`
-  height: ${(Dimensions.get('screen').width - 140) / 2}px;
-  width: ${(Dimensions.get('screen').width - 140) / 2}px;
+  height: ${hp(20)}px;
+  width: ${wp(100) / 3.5}px;
   border-radius: 10px;
 `;
 

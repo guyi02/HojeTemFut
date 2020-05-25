@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Image, View, Text, Platform } from 'react-native';
+import React, {Component} from 'react';
+import {Image, View, Text, Platform} from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
 import LottieView from 'lottie-react-native';
 import assets from '~/services/imagesImport';
 
-const StepsPage = ({ navigation }) => {
+const StepsPage = ({navigation}) => {
   startRegister = () => {
     navigation.navigate('AuthStack');
   };
@@ -21,7 +21,7 @@ const StepsPage = ({ navigation }) => {
           image: (
             <Image
               resizeMode="contain"
-              style={{ width: 300, height: 200 }}
+              style={{width: 300, height: 200}}
               source={assets.escudoTime}
             />
           ),
@@ -33,7 +33,7 @@ const StepsPage = ({ navigation }) => {
           backgroundColor: '#1E2748',
           image: (
             <Image
-              style={{ width: 300, height: 200, opacity: 0.6 }}
+              style={{width: 300, height: 200, opacity: 0.6}}
               source={assets.players}
             />
           ),
@@ -42,11 +42,11 @@ const StepsPage = ({ navigation }) => {
         },
         {
           backgroundColor: '#000',
-          titleStyles: { color: '#fff' },
-          subTitleStyles: { color: '#fff' },
+          titleStyles: {color: '#fff'},
+          subTitleStyles: {color: '#fff'},
           image: Platform.OS == 'ios' && (
             <LottieView
-              style={{ width: 200, height: 200 }}
+              style={{width: 200, height: 200}}
               source={assets.ballLottie}
               autoPlay
               loop

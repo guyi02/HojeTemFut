@@ -7,31 +7,40 @@ import {
 } from 'react-native-responsive-screen';
 import {isIphoneX} from 'react-native-iphone-x-helper';
 
-export const Container = styled.KeyboardAvoidingView`
+export const Container = styled.ImageBackground`
   flex: 1;
-  background-color: ${colors.primary};
+  z-index: -1000;
+  /* background-color: ${colors.primary}; */
+`;
+
+export const Header = styled.View`
+  width: 100%;
+  height: ${hp(12)}px;
+  background-color: #b33446;
 `;
 
 export const BackBtn = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 10px;
-  top: ${isIphoneX() ? '40px' : '20px'};
-  z-index: 100;
+  padding-top: ${isIphoneX() ? '50px' : '10px'};
 `;
 
 export const BackBtnIcon = styled(Icon).attrs((props) => ({
   color: colors.white,
   name: 'angle-left',
-  size: 50,
+  size: 35,
 }))`
   margin: 10px;
 `;
 
-export const Content = styled.ImageBackground`
+export const Content = styled.KeyboardAvoidingView`
   flex: 1;
-  padding-top: ${isIphoneX() ? '50px' : '30px'};
+`;
+
+export const ContentWraper = styled.View`
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 export const Title = styled.Text`
@@ -39,7 +48,7 @@ export const Title = styled.Text`
   font-size: ${hp(4)}px;
   text-align: center;
   margin: 0 30px;
-  margin-top: 110px;
+  margin-top: 30px;
   font-weight: bold;
 `;
 
@@ -76,6 +85,7 @@ export const BubbleBottomRight = styled.View`
   position: absolute;
   bottom: 0;
   right: -20px;
+  z-index: -1000;
 `;
 export const ContentArea = styled.ScrollView``;
 
@@ -97,7 +107,7 @@ export const InputWapper = styled.View.attrs(
 )``;
 
 export const InputText = styled.TextInput.attrs((props) => ({
-  placeholderTextColor: colors.white,
+  placeholderTextColor: 'rgba(255, 255, 255, 0.5)',
 }))`
   margin: 10px;
   padding: 20px 10px;
@@ -117,6 +127,31 @@ export const InputSelect = styled.Picker`
   align-content: center;
 `;
 
+export const FootOptionsRow = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const FootOptionsCard = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  ${(props) => props.active && `border: 1px solid ${colors.success}`}
+  margin: 5px 10px;
+`;
+
+export const FootOptionsImage = styled.Image`
+  width: 130px;
+  height: 100px;
+`;
+
+export const FootOptionsText = styled.Text`
+  font-size: 20px;
+  color: ${colors.primary};
+  font-weight: bold;
+  margin-top: 10px;
+`;
+
 export const ButtonSubmit = styled.TouchableOpacity`
   padding: 20px;
   border-radius: 10px;
@@ -130,4 +165,18 @@ export const ButtonSubmitText = styled.Text`
   font-size: 20px;
   font-weight: bold;
   color: ${colors.white};
+`;
+
+export const ButtonSelectModal = styled.TouchableOpacity`
+  margin: 10px;
+  padding: 20px 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid ${colors.white};
+  color: ${colors.white};
+`;
+
+export const ButtonSelectModalText = styled.Text`
+  font-size: 16px;
+  color: 'rgba(255, 255, 255, 0.5)';
 `;

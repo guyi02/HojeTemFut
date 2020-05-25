@@ -1,40 +1,55 @@
 import styled from 'styled-components/native';
-import { colors, metrics, fonts } from '~/styles';
+import {colors, metrics, fonts} from '~/styles';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 
-export const Container = styled.KeyboardAvoidingView.attrs({
-  behavior: 'padding',
-})`
+export const Container = styled.View`
   flex: 1;
   align-items: center;
   padding-top: ${getStatusBarHeight()}px;
-  background-color: ${colors.primary};
+  background-color: ${colors.white};
+  align-items: center;
 `;
 
-export const Form = styled.View`
-  flex: 1;
-  padding: ${metrics.basePadding}px;
-  width: 100%;
-  margin: 0px ${metrics.baseMargin}px;
-`;
-
-export const InputText = styled.TextInput.attrs({})`
-  margin: ${metrics.baseMargin}px 0px;
-  padding: ${hp(2.5)}px;
-  height: 50px;
-  border-radius: ${metrics.baseBorderRadius}px;
-  background-color: ${colors.secondary};
-  color: ${colors.white};
+export const ImageArea = styled.View`
+  padding-top: 20px;
 `;
 
 export const ImageLogo = styled.Image.attrs({})`
-  width: ${wp(50)};
-  height: ${wp(50)};
-  margin: ${metrics.baseMargin}px;
+  width: ${wp(60)}px;
+  height: ${wp(60)}px;
+  align-self: center;
+`;
+
+export const ImagePlayer = styled.Image.attrs({})`
+  width: ${wp(90)}px;
+  height: ${wp(90)}px;
+  opacity: 0.8;
+`;
+
+export const Form = styled.KeyboardAvoidingView`
+  flex: 1;
+  background-color: ${colors.bgPrimary};
+  padding: ${metrics.basePadding}px;
+  width: 100%;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  height: ${wp(80)}px;
+`;
+
+export const InputText = styled.TextInput.attrs({
+  placeholderTextColor: 'rgba(0, 0, 0, 0.5)',
+})`
+  margin: ${metrics.baseMargin}px 0px;
+  padding: 10px;
+  height: 50px;
+  border-radius: ${metrics.baseBorderRadius}px;
+  background-color: ${colors.white};
+  color: ${colors.primary};
+  border: 1px solid ${colors.bgPrimary};
 `;
 
 export const ButtonSubmitText = styled.Text`
@@ -45,10 +60,11 @@ export const ButtonSubmitText = styled.Text`
 export const ButtonSubmit = styled.TouchableOpacity.attrs({
   activeOpacity: 0.5,
 })`
-  background-color: ${colors.success};
   justify-content: center;
   align-items: center;
   padding: 10px;
+  margin: 20px 0;
   border-radius: 10px;
-  height: 80px;
+  height: 50px;
+  border: 1px solid ${colors.white};
 `;

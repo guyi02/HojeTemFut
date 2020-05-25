@@ -7,7 +7,7 @@ export default {
 
   primary: '#282828',
   secondary: '#414559',
-  bgPrimary: '#141D3D',
+  bgPrimary: '#1761A0',
 
   success: 'green',
   danger: 'red',

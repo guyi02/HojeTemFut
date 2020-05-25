@@ -1,11 +1,5 @@
-import React, { Component, useState, useEffect } from 'react';
-import {
-  Text,
-  Animated,
-  TouchableWithoutFeedback,
-  Image,
-  StatusBar,
-} from 'react-native';
+import React, {Component, useState, useEffect} from 'react';
+import {Animated, StatusBar} from 'react-native';
 import assets from '~/services/imagesImport';
 
 import {
@@ -17,12 +11,8 @@ import {
   TypeBtn,
   TypeImage,
 } from './styles';
-import {
-  widthPercentageToDP,
-  heightPercentageToDP,
-} from 'react-native-responsive-screen';
 
-const UserType = ({ navigation }) => {
+const UserType = ({navigation}) => {
   const [animPlayerCard] = useState(new Animated.Value(1));
   const [animTeamCard] = useState(new Animated.Value(1));
   const [choise, setChoise] = useState('');
@@ -37,10 +27,12 @@ const UserType = ({ navigation }) => {
       Animated.timing(animPlayerCard, {
         toValue: 1.7,
         duration: 500,
+        useNativeDriver: false,
       }),
       Animated.timing(animTeamCard, {
         toValue: 1,
         duration: 400,
+        useNativeDriver: false,
       }),
     ]).start();
   };
@@ -51,10 +43,12 @@ const UserType = ({ navigation }) => {
       Animated.timing(animTeamCard, {
         toValue: 1.7,
         duration: 500,
+        useNativeDriver: false,
       }),
       Animated.timing(animPlayerCard, {
         toValue: 1,
         duration: 400,
+        useNativeDriver: false,
       }),
     ]).start();
   };

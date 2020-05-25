@@ -7,7 +7,7 @@ import {
 } from 'react-native-responsive-screen';
 
 export const InputWithMask = styled(TextInputMask).attrs((props) => ({
-  placeholderTextColor: colors.white,
+  placeholderTextColor: 'rgba(255, 255, 255, 0.5)',
 }))`
   margin: 10px;
   padding: 20px 10px;
